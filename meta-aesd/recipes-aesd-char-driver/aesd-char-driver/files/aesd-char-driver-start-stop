@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#--------------------------------------
+# Author: Yusuf Abdulsttar
+# Description: Init script to load and unload aesdchar driver
+#--------------------------------------
+
+case "$1" in
+    start)
+	echo "loading aesdchar driver"
+	aesdchar_load
+	;;
+    stop)
+	echo "removing aesdchar driver"
+	aesdchar_unload
+	;;
+    *)
+	echo "Usage: $0 {start|stop}"
+	exit 1
+esac
+
+exit 0
